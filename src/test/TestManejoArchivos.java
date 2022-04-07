@@ -16,6 +16,9 @@ public class TestManejoArchivos {
         var nombreArchivo = "Prueba.txt";
         //crearArchivo(nombreArchivo);//Como el archivo ya se creó, no hay necesidad de volver a crearlo para escribir el archivo
         
-        escribirArchivo(nombreArchivo, "Hola desde JAVA");
+        //escribirArchivo(nombreArchivo, "Hola desde JAVA");
+        
+        anexarInformacionArchivo(nombreArchivo, "Hola nuevamente");
+        anexarInformacionArchivo(nombreArchivo, "Adios");
     }
 }

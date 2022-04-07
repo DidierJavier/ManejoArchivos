@@ -4,16 +4,17 @@
  */
 package manejoarchivos;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.PrintWriter;
+import java.io.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author DIDIER JAVIER
  */
 public class ManejoArchivos {
-    
-    public static void crearArchivo(String nombreArchivo){
+
+    public static void crearArchivo(String nombreArchivo) {
         File archivo = new File(nombreArchivo);//Se crea un objeto de tipo file en memoria
         try {
             PrintWriter salida = new PrintWriter(archivo);//PrintWriter permite crear y escribir archivos
@@ -23,8 +24,8 @@ public class ManejoArchivos {
             ex.printStackTrace(System.out);
         }
     }
-    
-    public  static void escribirArchivo(String nombreArchivo, String contenido){
+
+    public static void escribirArchivo(String nombreArchivo, String contenido) {
         File archivo = new File(nombreArchivo);//Se crea un objeto de tipo file en memoria
         try {
             PrintWriter salida = new PrintWriter(archivo);//PrintWriter permite crear y escribir archivos
@@ -32,6 +33,20 @@ public class ManejoArchivos {
             salida.close();//El archivo que se abrió se tiene que cerrar y en este momento se crea el archivo en memoria
             System.out.println("Se ha escrito al archivo");
         } catch (FileNotFoundException ex) {
+            ex.printStackTrace(System.out);
+        }
+    }
+
+    public static void anexarInformacionArchivo(String nombreArchivo, String contenido) {
+        File archivo = new File(nombreArchivo);//Se crea un objeto de tipo file en memoria
+        try {
+            PrintWriter salida = new PrintWriter(new FileWriter(archivo, true));//PrintWriter permite crear y escribir archivos
+            salida.println(contenido); //Se envía el contenido al archivo
+            salida.close();//El archivo que se abrió se tiene que cerrar y en este momento se crea el archivo en memoria
+            System.out.println("Se ha escrito al archivo");
+        } catch (FileNotFoundException ex) {
+            ex.printStackTrace(System.out);
+        } catch (IOException ex) {
             ex.printStackTrace(System.out);
         }
     }
