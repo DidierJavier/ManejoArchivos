@@ -4,7 +4,7 @@
  */
 package test;
 
-import static manejoarchivos.ManejoArchivos.crearArchivo;
+import static manejoarchivos.ManejoArchivos.*;
 
 /**
  *
@@ -14,6 +14,8 @@ public class TestManejoArchivos {
     public static void main(String[] args) {
         
         var nombreArchivo = "Prueba.txt";
-        crearArchivo(nombreArchivo);
+        //crearArchivo(nombreArchivo);//Como el archivo ya se creó, no hay necesidad de volver a crearlo para escribir el archivo
+        
+        escribirArchivo(nombreArchivo, "Hola desde JAVA");
     }
 }

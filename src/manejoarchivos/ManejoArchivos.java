@@ -23,4 +23,16 @@ public class ManejoArchivos {
             ex.printStackTrace(System.out);
         }
     }
+    
+    public  static void escribirArchivo(String nombreArchivo, String contenido){
+        File archivo = new File(nombreArchivo);//Se crea un objeto de tipo file en memoria
+        try {
+            PrintWriter salida = new PrintWriter(archivo);//PrintWriter permite crear y escribir archivos
+            salida.println(contenido); //Se envía el contenido al archivo
+            salida.close();//El archivo que se abrió se tiene que cerrar y en este momento se crea el archivo en memoria
+            System.out.println("Se ha escrito al archivo");
+        } catch (FileNotFoundException ex) {
+            ex.printStackTrace(System.out);
+        }
+    }
 }
