@@ -18,7 +18,9 @@ public class TestManejoArchivos {
         
         //escribirArchivo(nombreArchivo, "Hola desde JAVA");
         
-        anexarInformacionArchivo(nombreArchivo, "Hola nuevamente");
-        anexarInformacionArchivo(nombreArchivo, "Adios");
+        //anexarInformacionArchivo(nombreArchivo, "Hola nuevamente");
+        //anexarInformacionArchivo(nombreArchivo, "Adios");
+        
+        leerArchivo(nombreArchivo);
     }
 }

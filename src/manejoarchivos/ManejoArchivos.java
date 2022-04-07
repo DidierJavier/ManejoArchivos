@@ -43,11 +43,30 @@ public class ManejoArchivos {
             PrintWriter salida = new PrintWriter(new FileWriter(archivo, true));//PrintWriter permite crear y escribir archivos
             salida.println(contenido); //Se envía el contenido al archivo
             salida.close();//El archivo que se abrió se tiene que cerrar y en este momento se crea el archivo en memoria
-            System.out.println("Se ha escrito al archivo");
+            System.out.println("Se ha anexado información al archivo");
         } catch (FileNotFoundException ex) {
             ex.printStackTrace(System.out);
         } catch (IOException ex) {
             ex.printStackTrace(System.out);
         }
+    }
+    
+    public static void leerArchivo(String nombreArchivo) {
+        File archivo = new File(nombreArchivo);//Se crea un objeto de tipo file en memoria
+        try {
+            BufferedReader entrada = new BufferedReader(new FileReader(archivo));//Se lee la información del archivo
+            var lectura = entrada.readLine();
+            while(lectura != null){             //Ciclo while para leer la información hasta que haya una línea en blanco
+                System.out.println("Lectura: " + lectura);
+                lectura = entrada.readLine();
+            }
+        } catch (FileNotFoundException ex) {
+            ex.printStackTrace(System.out);
+        } catch (IOException ex) {
+            ex.printStackTrace(System.out);
+        }
+        
+        
+        
     }
 }
