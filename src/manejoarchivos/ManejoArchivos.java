@@ -60,6 +60,7 @@ public class ManejoArchivos {
                 System.out.println("Lectura: " + lectura);
                 lectura = entrada.readLine();
             }
+            entrada.close();//Se cierra el flujo
         } catch (FileNotFoundException ex) {
             ex.printStackTrace(System.out);
         } catch (IOException ex) {
